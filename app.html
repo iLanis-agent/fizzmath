@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fizz Math</title>
+<style>
+  :root { --accent: #2a7d8f; --warn: #a83232; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 16px 64px; background: #f3f7f8; color: #22282a;
+         font-family: Georgia, 'Times New Roman', serif; }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 { color: var(--accent); font-size: 2.2rem; margin: 0 0 4px; }
+  .tag { font-style: italic; color: var(--accent); margin: 0 0 28px; }
+  .boundary { border-left: 4px solid var(--warn); background: #fdf1f1; padding: 16px 20px;
+              border-radius: 8px; margin: 0 0 28px; }
+  .boundary h2 { color: var(--warn); font-size: 1.1rem; margin: 0 0 8px; }
+  .boundary p { margin: 0; line-height: 1.5; }
+  .card { background: #fff; border: 1px solid #d9e3e6; border-left: 4px solid var(--accent);
+          border-radius: 8px; padding: 20px 24px; margin: 0 0 24px; }
+  .card h2 { margin: 0 0 14px; font-size: 1.25rem; }
+  label { display: block; font-size: 0.95rem; margin: 10px 0 4px; }
+  input, select { width: 100%; max-width: 220px; padding: 8px 10px; font-size: 1rem;
+          border: 1px solid #bccdd2; border-radius: 6px; background: #edf3f4; }
+  .out { margin-top: 16px; font-size: 1.05rem; font-weight: bold; color: var(--accent);
+         line-height: 1.5; }
+  .out.err { color: var(--warn); }
+  footer { margin-top: 32px; font-size: 0.85rem; color: #7c8a8e; line-height: 1.5; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fizz Math</h1>
+  <p class="tag">Fizz truth, bottle truth and cost truth - labeled norms, honest arithmetic.</p>
+
+  <div class="boundary">
+    <h2>The boundary</h2>
+    <p>Fizz Math keeps labeled-norm arithmetic only. Cylinder yields, bottle counts and
+    exchange prices are labeled norms, not measurements of your machine, your water or your
+    store - real yield depends on how cold the water is, how hard you press and how you
+    store the bottle. Follow the machine's manual over anything this page says, and never
+    carbonate anything but plain water.</p>
+  </div>
+
+  <div class="card">
+    <h2>The fizz truth</h2>
+    <label for="f-cyl">60-liter cylinders</label>
+    <input id="f-cyl" type="number" step="any" value="1">
+    <label for="f-level">Fizz level</label>
+    <select id="f-level">
+      <option value="0">gentle (the box's 60)</option>
+      <option value="1">medium (about 40)</option>
+      <option value="2" selected>strong (about 25)</option>
+    </select>
+    <p class="out" id="f-out"></p>
+  </div>
+
+  <div class="card">
+    <h2>The bottle truth</h2>
+    <label for="b-liters">Seltzer on hand (liters)</label>
+    <input id="b-liters" type="number" step="any" value="25">
+    <label for="b-size">Bottle size</label>
+    <select id="b-size">
+      <option value="0" selected>one-liter</option>
+      <option value="1">half-liter</option>
+    </select>
+    <p class="out" id="b-out"></p>
+  </div>
+
+  <div class="card">
+    <h2>The cost truth</h2>
+    <label for="c-exchange">Cylinder exchange price ($)</label>
+    <input id="c-exchange" type="number" step="any" value="15">
+    <label for="c-liters">Liters per exchange</label>
+    <input id="c-liters" type="number" step="any" value="25">
+    <label for="c-store">Store seltzer ($ per liter)</label>
+    <input id="c-store" type="number" step="any" value="0.85">
+    <p class="out" id="c-out"></p>
+  </div>
+
+  <footer>
+    Every figure here is hypothetical arithmetic on labeled norms, not a statement about any real
+    machine, cylinder or store. <a href="index.html">About Fizz Math</a>
+  </footer>
+</main>
+<script src="engine.js"></script>
+<script>
+function num(id) { return parseFloat(document.getElementById(id).value); }
+function val(id) { return document.getElementById(id).value; }
+function render(id, fn) {
+  const el = document.getElementById(id);
+  try {
+    el.textContent = fn();
+    el.classList.remove("err");
+  } catch (e) {
+    el.textContent = e.message;
+    el.classList.add("err");
+  }
+}
+function update() {
+  render("f-out", () => fizzTruth(num("f-cyl"), parseInt(val("f-level"), 10)));
+  render("b-out", () => bottleTruth(num("b-liters"), parseInt(val("b-size"), 10)));
+  render("c-out", () => costTruth(num("c-exchange"), num("c-liters"), num("c-store")));
+}
+document.querySelectorAll("input, select").forEach(i => {
+  i.addEventListener("input", update);
+  i.addEventListener("change", update);
+});
+update();
+</script>
+</body>
+</html>
