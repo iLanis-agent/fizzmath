@@ -1,0 +1,237 @@
+[
+ {
+  "fn": "fizzTruth",
+  "args": [
+   1,
+   2
+  ],
+  "out": "1 60-liter cylinder at strong fizz pours 25 liters of seltzer - the box was counting gentler presses honestly."
+ },
+ {
+  "fn": "fizzTruth",
+  "args": [
+   2,
+   0
+  ],
+  "out": "2 60-liter cylinders at gentle fizz pour 120 liters of seltzer - the box's own number honestly."
+ },
+ {
+  "fn": "fizzTruth",
+  "args": [
+   1,
+   1
+  ],
+  "out": "1 60-liter cylinder at medium fizz pours 40 liters of seltzer - two-thirds of the box honestly."
+ },
+ {
+  "fn": "fizzTruth",
+  "args": [
+   3,
+   2
+  ],
+  "out": "3 60-liter cylinders at strong fizz pour 75 liters of seltzer - the box was counting gentler presses honestly."
+ },
+ {
+  "fn": "fizzTruth",
+  "args": [
+   2,
+   1
+  ],
+  "out": "2 60-liter cylinders at medium fizz pour 80 liters of seltzer - two-thirds of the box honestly."
+ },
+ {
+  "fn": "fizzTruth",
+  "args": [
+   1,
+   0
+  ],
+  "out": "1 60-liter cylinder at gentle fizz pours 60 liters of seltzer - the box's own number honestly."
+ },
+ {
+  "fn": "fizzTruth",
+  "args": [
+   0,
+   1
+  ],
+  "err": "the cylinders must be above zero"
+ },
+ {
+  "fn": "fizzTruth",
+  "args": [
+   -2,
+   0
+  ],
+  "err": "the cylinders must be above zero"
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   25,
+   0
+  ],
+  "out": "25 liters of seltzer fill 25 one-liter bottles, nothing left over honestly."
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   25,
+   1
+  ],
+  "out": "25 liters of seltzer fill 50 half-liter bottles, nothing left over honestly."
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   26.5,
+   0
+  ],
+  "out": "26.5 liters of seltzer fill 26 one-liter bottles, with 0.5 liters left over honestly."
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   10,
+   1
+  ],
+  "out": "10 liters of seltzer fill 20 half-liter bottles, nothing left over honestly."
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   1,
+   1
+  ],
+  "out": "1 liter of seltzer fills 2 half-liter bottles, nothing left over honestly."
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   0.5,
+   0
+  ],
+  "out": "0.5 liters of seltzer fill 0 one-liter bottles, with 0.5 liters left over honestly."
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   7.5,
+   0
+  ],
+  "out": "7.5 liters of seltzer fill 7 one-liter bottles, with 0.5 liters left over honestly."
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   40,
+   1
+  ],
+  "out": "40 liters of seltzer fill 80 half-liter bottles, nothing left over honestly."
+ },
+ {
+  "fn": "bottleTruth",
+  "args": [
+   0,
+   0
+  ],
+  "err": "the seltzer liters must be above zero"
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   15,
+   25,
+   0.85
+  ],
+  "out": "A $15.00 exchange over 25 liters puts seltzer at $0.60 a liter; the store's $0.85 leaves $0.25 saved a liter honestly."
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   15,
+   60,
+   0.85
+  ],
+  "out": "A $15.00 exchange over 60 liters puts seltzer at $0.25 a liter; the store's $0.85 leaves $0.60 saved a liter honestly."
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   15,
+   40,
+   0.5
+  ],
+  "out": "A $15.00 exchange over 40 liters puts seltzer at $0.38 a liter; the store's $0.50 leaves $0.12 saved a liter honestly."
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   15,
+   25,
+   0.5
+  ],
+  "out": "A $15.00 exchange over 25 liters puts seltzer at $0.60 a liter; the store's $0.50 costs $0.10 more a liter honestly."
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   15,
+   25,
+   0.6
+  ],
+  "out": "A $15.00 exchange over 25 liters puts seltzer at $0.60 a liter; the store's $0.60 matches the store exactly honestly."
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   20,
+   25,
+   0.85
+  ],
+  "out": "A $20.00 exchange over 25 liters puts seltzer at $0.80 a liter; the store's $0.85 leaves $0.05 saved a liter honestly."
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   10,
+   10,
+   2.0
+  ],
+  "out": "A $10.00 exchange over 10 liters puts seltzer at $1.00 a liter; the store's $2.00 leaves $1.00 saved a liter honestly."
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   15,
+   30,
+   0.45
+  ],
+  "out": "A $15.00 exchange over 30 liters puts seltzer at $0.50 a liter; the store's $0.45 costs $0.05 more a liter honestly."
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   0,
+   25,
+   0.85
+  ],
+  "err": "the exchange price must be above zero"
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   15,
+   0,
+   0.85
+  ],
+  "err": "the liters must be above zero"
+ },
+ {
+  "fn": "costTruth",
+  "args": [
+   15,
+   25,
+   0
+  ],
+  "err": "the store price must be above zero"
+ }
+]
